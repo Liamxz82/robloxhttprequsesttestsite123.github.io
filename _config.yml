@@ -1,4 +1,4 @@
-#title: INSERT TITLE HERE
+title: script
 description: local thing = "Hi there! Do you like this HTTP request thing?"
 local number = math.random(1,50)
 warn(thing)
