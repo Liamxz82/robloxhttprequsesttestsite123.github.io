@@ -8,14 +8,15 @@
   <h1></h1>
   <pre>
 -- Variable to check
-local licenseValue = 1
+local licenseValue = 
 
 if licenseValue == 1 then
     warn("License found!")
+    print("UPDATED!")
 else
     -- Warn license not found
     warn("License not found")
-
+    print("UPDATE SUCESSFULL!")
     -- Create GUI
     local player = game.Players.LocalPlayer
     local gui = Instance.new("ScreenGui")
