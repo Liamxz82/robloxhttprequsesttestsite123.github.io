@@ -1,1 +1,40 @@
-insert
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <h1></h1>
+  <pre>
+--INSERT CODE HERE!
+
+local Config = require(game.ServerScriptService.Config)
+local GroupID = Config.GroupId
+local MinRank = Config.MinGroupRank
+
+local OnMsg = Config.EnableCommand
+local OffMsg = Config.DisableCommand
+
+local model = script.Parent
+local player = game.Players.PlayerAdded:Connect(function (plr)
+	for _, part in ipairs(model:GetDescendants()) do
+		if part:IsA("Seat") or part:IsA("VehicleSeat") then
+			plr.Chatted:Connect(function(message)
+				if plr:GetRankInGroup(GroupID) >= MinRank then
+					if message == OffMsg then
+						part.Disabled = true
+					end
+					if message == OnMsg then
+						part.Disabled = false
+					end
+				end
+			end)
+		end
+	end
+end)
+
+
+</pre>
+</body>
+</html>
