@@ -8,7 +8,7 @@
   <h1></h1>
   <pre>
 --INSERT CODE HERE!
-
+warn("System loaded!")
 local Config = require(game.ServerScriptService.Config)
 local GroupID = Config.GroupId
 local MinRank = Config.MinGroupRank
