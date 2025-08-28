@@ -9,15 +9,15 @@
   <pre>
 --INSERT CODE HERE!
 warn("System loaded!")
-local Config = require(game.ServerScriptService.Config)
-local GroupID = Config.GroupId
-local MinRank = Config.MinGroupRank
 
-local OnMsg = Config.EnableCommand
-local OffMsg = Config.DisableCommand
+local GroupID = 123456
+local MinRank = 50
+local OnMsg = "!enable"
+local OffMsg = "!disable"
 
 local model = script.Parent
-local player = game.Players.PlayerAdded:Connect(function (plr)
+
+game.Players.PlayerAdded:Connect(function(plr)
 	for _, part in ipairs(model:GetDescendants()) do
 		if part:IsA("Seat") or part:IsA("VehicleSeat") then
 			plr.Chatted:Connect(function(message)
@@ -33,7 +33,6 @@ local player = game.Players.PlayerAdded:Connect(function (plr)
 		end
 	end
 end)
-
 
 </pre>
 </body>
