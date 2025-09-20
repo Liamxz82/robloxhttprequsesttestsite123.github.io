@@ -8,7 +8,21 @@
   <h1></h1>
   <pre>
 
-
+local Vault = require(89336655405102)
+if Vault:WhitelistAync({
+	productUUID = "fd2b0f52-b1d6-4f18-b40f-274ff634a374",
+	vaultUUID = "2739536c-2d38-4cee-94b3-6a36fade9169",
+	blacklists = true,
+	blockStudio = false,
+	alerts = true
+	}) then
+	
+	print("Your whitelist has been found! - liamxz82")
+	
+else
+	warn("SCI - NOT WHITELISTED! - liamxz82")
+	game.ReplicatedStorage.SelfCheckIn:Destroy()
+end
 
 </pre>
 </body>
