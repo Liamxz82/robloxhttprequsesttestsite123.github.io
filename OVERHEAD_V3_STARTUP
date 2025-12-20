@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <h1></h1>
+  <pre>
+
+
+
+
+
+local plr = game.Players.LocalPlayer
+
+local Loading = script.Parent.Main.Loading
+local Sound = Loading.Startup_Sound
+
+local Config = require(game.ReplicatedStorage:WaitForChild("Overhead_Bins_V3_REPLICATED_STORAGE"):WaitForChild("Bins_V3_Config"))
+
+
+plr.Chatted:Connect(function(command)
+	
+	if command == "!BinsPanel" or command == "/BinsPanel" then
+		
+		local rank = plr:GetRankInGroupAsync(Config.GroupId)
+		
+		if rank >= Config.MinPanelRank then
+			
+
+			script.Parent.Main.Visible = true
+			script.Parent.Main.Loading.Visible = true
+
+
+			Loading.User.Transparency = 1
+			Loading.User.TextTransparency = 1
+
+			Loading.ProductName.Transparency = 1
+			Loading.ProductName.TextTransparency = 1
+
+			Loading.Loading.Transparency = 1
+			Loading.Loading.TextTransparency = 1
+
+			Loading.Loading_Circle.Transparency = 1
+			Loading.Loading_Circle.ImageTransparency = 1
+
+			Loading.User.Text = "By @liamxz82"
+
+			Sound:Play()
+			Loading.ProductName.Visible = true
+
+			for i = 1, 10 do
+				Loading.ProductName.TextTransparency -= 0.1
+				wait(0.04)
+			end
+
+
+			wait(0.5)
+
+
+			-- LOAD USER
+			Loading.User.Visible = true
+
+
+			for i = 1, 5 do
+				Loading.User.TextTransparency -= 0.1
+				wait(0.04)
+			end
+			--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+
+
+			wait(0.35)
+
+			Loading.Loading.Visible = true
+
+
+			for i = 1, 10 do
+				Loading.Loading.TextTransparency -= 0.1
+				wait(0.04)
+			end
+
+			wait(0.15)
+
+
+			Loading.Loading_Circle.Visible = true
+
+			for i = 1, 10 do
+				Loading.Loading_Circle.ImageTransparency -= 0.1
+				wait(0.04)
+			end
+
+
+
+
+
+			wait(3.5)	
+			Loading.Visible = false
+
+			script.Parent.Main.Application.Visible = true
+
+
+			
+		end
+		
+	end
+	
+end)
+
+
+
+
+
+</pre>
+</body>
+</html>
